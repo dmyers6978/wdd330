@@ -1,8 +1,8 @@
 var list = document.getElementById("main");
 const links = [
     {
-      label: "Week1 notes",
-      url: "week1/index.html"
+      text: "Week1 notes",
+      href: "week1/index.html"
     }
   ]
 
