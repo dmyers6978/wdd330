@@ -1,5 +1,10 @@
 var list = document.getElementById("main");
-var links = [];
+const links = [
+    {
+      label: "Week1 notes",
+      url: "week1/index.html"
+    }
+  ]
 
 for(var i = 0; i < links.length; i++){
     var item = document.createElement("LI");
