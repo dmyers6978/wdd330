@@ -7,6 +7,14 @@ const links = [
     {
       text: "Week2 notes",
       href: "week2/index.html"
+    },
+    {
+      text: "Week4 search box",
+      href: "week4/index.html"
+    },
+    {
+      text: "Week4 hero form",
+      href: "week4/hero.html"
     }
   ]
 
