@@ -15,6 +15,10 @@ const links = [
     {
       text: "Week4 hero form",
       href: "week4/hero.html"
+    },
+    {
+      text: "Week5 exception handling",
+      href: "week5/index.html"
     }
   ]
 
