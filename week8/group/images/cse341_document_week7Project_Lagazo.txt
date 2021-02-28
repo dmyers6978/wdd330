@@ -1,0 +1,31 @@
+1. Project Title / One sentence description:
+Josie's Mountain Spa Retreat
+This website is an e-commerce site for a spa.
+
+2. The Heroku URL for your web application:
+https://enigmatic-meadow-60606.herokuapp.com/Project01/homepage.php
+
+3. The GitHub URL for your source code repository:
+https://github.com/ilagazo/CSE341/tree/main/web/Project01
+
+4. A link to the SQL file that contains the commands used to create your tables (e.g. a link to the myDb.sql file at GitHub, or something similar).
+https://github.com/ilagazo/CSE341/blob/main/db/SQLCommands_Lagazo.sql
+
+5. Please provide a brief description of what your project does and how to use the application. Make sure to include any required information like a username and password.
+This project allows clients to shop for massage services through this e-commerce site. The site allows clients to add these services into a cart and then checkout. The checkout also includes some logic, such as
+not allowing clients to procede to checkout without actually having a product in the cart. Employees are able to login via a portal and access/retrieve the customer orders. The employees are able to edit and delete the 
+orders, as well as their own employee information. You can access the dashboard with these credentials:
+
+Username: thomas
+Passwrord: smith121
+
+OR
+
+Username: jill.korn
+Password: jill.korn121
+
+6. Briefly describe any pieces of the assignment that are not yet working correctly.
+As far as the project guidelines listed here:https://content.byui.edu/file/14882098-ce1f-44ba-a196-a7aebcb3d5ce/1/week02/proposal.html
+
+The only thing that is not fully functional is being able to insert into the database. Specifically, this occurs during after checkout after the user confirms the purchase. I am able to insert the user's
+address, customer,and payment information. However, the products proved to be more difficult since there were multiple being inserted. Overall, everything is functional except for that.

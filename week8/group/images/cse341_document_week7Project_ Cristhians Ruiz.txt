@@ -1,0 +1,53 @@
+1. Project Title / One sentence description:
+Buddy Loan
+App to keep balance with your friends loans
+
+2. The Heroku URL for your web application:
+http://calm-sierra-76753.herokuapp.com/buddyloan/accounts/
+
+
+3. The GitHub URL for your source code repository:
+ttps://calm-sierra-76753.herokuapp.com/
+https://calm-sierra-76753.herokuapp.com/buddyloan
+
+
+4. A link to the SQL file that contains the commands used to create your tables (e.g. a link to the myDb.sql file at GitHub, or something similar).
+DB creation
+https://github.com/cris-rr/cs313-php/blob/master/db/myDb.sql
+Insert some data.
+https://github.com/cris-rr/cs313-php/blob/master/db/insert.sql
+
+5. Please provide a brief description of what your project does and how to use the application. Make sure to include any required information like a username and password.
+BuddyLoan: Allows to add buddies using a pin, every buddy should be a registered user and they must share they pin, which is a unique number, in order to add each other.
+
+The application has this modules:
+Login: All users must login before use the app, this is the default page if you are not logged in.
+
+Admin: to change basic user info and the password, but not the email which is the username
+
+Buddies: Here you will see all your buddies and a Balance of transactions. This is the place to add buddies, also to delete them.
+
+Transactions: Here you will see all transactions and you can add, edit or delete them.
+
+Dashboard: This is the default page it you are logged in, it presents a Summary of your debt status with your buddies and a general balance.
+
+
+User for testing: 
+User: cris@gmail.com
+Pass: Pass12345$
+
+Current Existing pins on the database:
+pin
+------
+ 1820
+ 1212
+ 3344
+ 9988
+ 1111
+
+The ideal way to test the app will be creating a new user and add buddies with the Pin number. Or open 2 browsers and add different users and add each other by their Pin numbers.
+ 
+
+6. Briefly describe any pieces of the assignment that are not yet working correctly.
+I am working on the dashboard to improve the look. It should be ready by deadline.
+
