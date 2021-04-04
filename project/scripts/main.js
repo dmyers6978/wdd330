@@ -25,16 +25,16 @@ function loadPeople(apiURL){
     .then( text => {
         container.innerHTML = "";
         text.results.forEach(person => {
-            container.innerHTML += "<p><a href='#' onclick=\"personDetails('" + person.url + "')\">" + person.name + "</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"personDetails('" + person.url.replace("http", "https") + "')\">" + person.name + "</a></p>";
         })
         if(text.previous){
-            container.innerHTML += "<button onclick=\"loadPeople('" + text.previous + "')\" id='previous'>Previous</button>";
+            container.innerHTML += "<button onclick=\"loadPeople('" + text.previous.replace("http", "https") + "')\" id='previous'>Previous</button>";
         }
         if(text.previous && text.next){
             container.innerHTML += "<span>&nbsp;|&nbsp;</span>";
         }
         if(text.next){
-            container.innerHTML += "<button onclick=\"loadPeople('" + text.next + "')\" id='next'>Next</button>";
+            container.innerHTML += "<button onclick=\"loadPeople('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
     })
     .catch( error => console.log('There was an error:', error));
@@ -55,16 +55,16 @@ function loadPlanets(apiURL){
     .then( text => {
         container.innerHTML = "";
         text.results.forEach(person => {
-            container.innerHTML += "<p><a href='#' onclick=\"planetDetails('" + person.url + "')\">" + person.name + "</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"planetDetails('" + person.url.replace("http", "https") + "')\">" + person.name + "</a></p>";
         })
         if(text.previous){
-            container.innerHTML += "<button onclick=\"loadPlanets('" + text.previous + "')\" id='previous'>Previous</button>";
+            container.innerHTML += "<button onclick=\"loadPlanets('" + text.previous.replace("http", "https") + "')\" id='previous'>Previous</button>";
         }
         if(text.previous && text.next){
             container.innerHTML += "<span>&nbsp;|&nbsp;</span>";
         }
         if(text.next){
-            container.innerHTML += "<button onclick=\"loadPlanets('" + text.next + "')\" id='next'>Next</button>";
+            container.innerHTML += "<button onclick=\"loadPlanets('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
     })
     .catch( error => console.log('There was an error:', error));
@@ -85,16 +85,16 @@ function loadFilms(apiURL){
     .then( text => {
         container.innerHTML = "";
         text.results.forEach(person => {
-            container.innerHTML += "<p><a href='#' onclick=\"filmDetails('" + person.url + "')\">" + person.title + "</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"filmDetails('" + person.url.replace("http", "https") + "')\">" + person.title + "</a></p>";
         })
         if(text.previous){
-            container.innerHTML += "<button onclick=\"loadFilms('" + text.previous + "')\" id='previous'>Previous</button>";
+            container.innerHTML += "<button onclick=\"loadFilms('" + text.previous.replace("http", "https") + "')\" id='previous'>Previous</button>";
         }
         if(text.previous && text.next){
             container.innerHTML += "<span>&nbsp;|&nbsp;</span>";
         }
         if(text.next){
-            container.innerHTML += "<button onclick=\"loadFilms('" + text.next + "')\" id='next'>Next</button>";
+            container.innerHTML += "<button onclick=\"loadFilms('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
     })
     .catch( error => console.log('There was an error:', error));
@@ -115,16 +115,16 @@ function loadSpecies(apiURL){
     .then( text => {
         container.innerHTML = "";
         text.results.forEach(person => {
-            container.innerHTML += "<p><a href='#' onclick=\"speciesDetails('" + person.url + "')\">" + person.name + "</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"speciesDetails('" + person.url.replace("http", "https") + "')\">" + person.name + "</a></p>";
         })
         if(text.previous){
-            container.innerHTML += "<button onclick=\"loadSpecies('" + text.previous + "')\" id='previous'>Previous</button>";
+            container.innerHTML += "<button onclick=\"loadSpecies('" + text.previous.replace("http", "https") + "')\" id='previous'>Previous</button>";
         }
         if(text.previous && text.next){
             container.innerHTML += "<span>&nbsp;|&nbsp;</span>";
         }
         if(text.next){
-            container.innerHTML += "<button onclick=\"loadSpecies('" + text.next + "')\" id='next'>Next</button>";
+            container.innerHTML += "<button onclick=\"loadSpecies('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
     })
     .catch( error => console.log('There was an error:', error));
@@ -145,16 +145,16 @@ function loadVehicles(apiURL){
     .then( text => {
         container.innerHTML = "";
         text.results.forEach(person => {
-            container.innerHTML += "<p><a href='#' onclick=\"vehicleDetails('" + person.url + "')\">" + person.name + "</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"vehicleDetails('" + person.url.replace("http", "https") + "')\">" + person.name + "</a></p>";
         })
         if(text.previous){
-            container.innerHTML += "<button onclick=\"loadVehicles('" + text.previous + "')\" id='previous'>Previous</button>";
+            container.innerHTML += "<button onclick=\"loadVehicles('" + text.previous.replace("http", "https") + "')\" id='previous'>Previous</button>";
         }
         if(text.previous && text.next){
             container.innerHTML += "<span>&nbsp;|&nbsp;</span>";
         }
         if(text.next){
-            container.innerHTML += "<button onclick=\"loadVehicles('" + text.next + "')\" id='next'>Next</button>";
+            container.innerHTML += "<button onclick=\"loadVehicles('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
     })
     .catch( error => console.log('There was an error:', error));
@@ -175,16 +175,16 @@ function loadStarships(apiURL){
     .then( text => {
         container.innerHTML = "";
         text.results.forEach(person => {
-            container.innerHTML += "<p><a href='#' onclick=\"starshipDetails('" + person.url + "')\">" + person.name + "</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"starshipDetails('" + person.url.replace("http", "https") + "')\">" + person.name + "</a></p>";
         })
         if(text.previous){
-            container.innerHTML += "<button onclick=\"loadStarships('" + text.previous + "')\" id='previous'>Previous</button>";
+            container.innerHTML += "<button onclick=\"loadStarships('" + text.previous.replace("http", "https") + "')\" id='previous'>Previous</button>";
         }
         if(text.previous && text.next){
             container.innerHTML += "<span>&nbsp;|&nbsp;</span>";
         }
         if(text.next){
-            container.innerHTML += "<button onclick=\"loadStarships('" + text.next + "')\" id='next'>Next</button>";
+            container.innerHTML += "<button onclick=\"loadStarships('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
     })
     .catch( error => console.log('There was an error:', error));
