@@ -235,7 +235,7 @@ function initialize(apiURL){
     .then( text => {
         container.innerHTML = "";
         for (const [key, value] of Object.entries(text)) {
-            container.innerHTML += "<p><a href='#' onclick=\"navigate('" + value + "', '" + key + "')\">" + key.charAt(0).toUpperCase() + key.slice(1) + "</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"navigate('" + value.replace("http", "https") + "', '" + key + "')\">" + key.charAt(0).toUpperCase() + key.slice(1) + "</a></p>";
           }
     })
     .catch( error => console.log('There was an error:', error));
