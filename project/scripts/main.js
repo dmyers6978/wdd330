@@ -288,13 +288,13 @@ function planetDetails(apiURL){
         container.innerHTML += "<p>Climate: " + planet.climate + "</p>";
         container.innerHTML += "<p>Diameter: " + planet.diameter + "</p>";
         if(planet.films.length > 0){
-            container.innerHTML += "<a href='#' onclick=\"getFilms('" + planet.films + "')\">View Films</a>";
+            container.innerHTML += "<a href='#' onclick=\"getFilms('" + planet.films.replace("http", "https") + "')\">View Films</a>";
         }
         container.innerHTML += "<p>Gravity: " + planet.gravity + "</p>";
         container.innerHTML += "<p>Orbital Period: " + planet.orbital_period + "</p>";
         container.innerHTML += "<p>Population: " + planet.population + "</p>";
         if(planet.residents.length > 0){
-            container.innerHTML += "<a href='#' onclick=\"getPeople('" + planet.residents + "')\">View Residents</a>";
+            container.innerHTML += "<a href='#' onclick=\"getPeople('" + planet.residents.replace("http", "https") + "')\">View Residents</a>";
         }
         container.innerHTML += "<p>Rotation Period: " + planet.rotation_period + "</p>";
         container.innerHTML += "<p>Surface Water: " + planet.surface_water + "</p>";
@@ -320,7 +320,7 @@ function filmDetails(apiURL){
         container.innerHTML = "";
         container.innerHTML += "<h1>" + film.title + "</h1>";
         if(film.characters.length > 0){
-            container.innerHTML += "<a href='#' onclick=\"getPeople('" + film.characters + "')\">View Characters</a>";
+            container.innerHTML += "<a href='#' onclick=\"getPeople('" + film.characters.replace("http", "https") + "')\">View Characters</a>";
         }
         container.innerHTML += "<p>Director: " + film.director + "</p>";
         container.innerHTML += "<p>Opening Crawl:<br>" + nl2br(film.opening_crawl, false) + "</p>";
@@ -329,13 +329,13 @@ function filmDetails(apiURL){
         var date = d.getDate()  + " " + monthNames[d.getMonth()] + ", " + d.getFullYear(); 
         container.innerHTML += "<p>Release Date: " + date + "</p>";
         if(film.species.length > 0){
-            container.innerHTML += "<p><a href='#' onclick=\"getSpecies('" + film.species + "')\">View Species</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"getSpecies('" + film.species.replace("http", "https") + "')\">View Species</a></p>";
         }
         if(film.starships.length > 0){
-            container.innerHTML += "<p><a href='#' onclick=\"getStarships('" + film.starships + "')\">View Starships</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"getStarships('" + film.starships.replace("http", "https") + "')\">View Starships</a></p>";
         }
         if(film.vehicles.length > 0){
-            container.innerHTML += "<p><a href='#' onclick=\"getVehicles('" + film.vehicles + "')\">View Vehicles</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"getVehicles('" + film.vehicles.replace("http", "https") + "')\">View Vehicles</a></p>";
         }
     })
     .catch( error => console.log('There was an error:', error));
@@ -363,12 +363,12 @@ function speciesDetails(apiURL){
         container.innerHTML += "<p>Designation: " + species.designation + "</p>";
         container.innerHTML += "<p>Eye Colors: " + species.eye_colors + "</p>";
         if(species.films.length > 0){
-            container.innerHTML += "<p><a href='#' onclick=\"getFilms('" + species.films + "')\">View Films</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"getFilms('" + species.films.replace("http", "https") + "')\">View Films</a></p>";
         }
         container.innerHTML += "<p>Hair Colors: " + species.hair_colors + "</p>";
         container.innerHTML += "<p>Language: " + species.language + "</p>";
         if(species.people.length > 0){
-            container.innerHTML += "<p><a href='#' onclick=\"getPeople('" + species.people + "')\">View People</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"getPeople('" + species.people.replace("http", "https") + "')\">View People</a></p>";
         }
         container.innerHTML += "<p>Skin Colors: " + species.skin_colors + "</p>";
     })
@@ -396,7 +396,7 @@ function vehicleDetails(apiURL){
         container.innerHTML += "<p>Cost (In Credits): " + vehicle.cost_in_credits + "</p>";
         container.innerHTML += "<p>Crew: " + vehicle.crew + "</p>";
         if(vehicle.films.length > 0){
-            container.innerHTML += "<p><a href='#' onclick=\"getFilms('" + vehicle.films + "')\">View Films</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"getFilms('" + vehicle.films.replace("http", "https") + "')\">View Films</a></p>";
         }
         container.innerHTML += "<p>Length: " + vehicle.length + "</p>";
         container.innerHTML += "<p>manufacturer: " + vehicle.manufacturer + "</p>";
@@ -404,7 +404,7 @@ function vehicleDetails(apiURL){
         container.innerHTML += "<p>Model: " + vehicle.model + "</p>";
         container.innerHTML += "<p>Passengers: " + vehicle.passengers + "</p>";
         if(vehicle.pilots.length > 0){
-            container.innerHTML += "<p><a href='#' onclick=\"getPeople('" + vehicle.pilots + "')\">View People</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"getPeople('" + vehicle.pilots.replace("http", "https") + "')\">View People</a></p>";
         }
         container.innerHTML += "<p>Vehicle Class: " + vehicle.vehicle_class + "</p>";
 
@@ -434,7 +434,7 @@ function starshipDetails(apiURL){
         container.innerHTML += "<p>Cost (In Credits): " + starship.cost_in_credits + "</p>";
         container.innerHTML += "<p>Crew: " + starship.crew + "</p>";
         if(starship.films.length > 0){
-            container.innerHTML += "<p><a href='#' onclick=\"getFilms('" + starship.films + "')\">View Films</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"getFilms('" + starship.films.replace("http", "https") + "')\">View Films</a></p>";
         }
         container.innerHTML += "<p>Hyperdrive Rating: " + starship.hyperdrive_rating + "</p>";
         container.innerHTML += "<p>Manufacturer: " + starship.manufacturer + "</p>";
@@ -442,7 +442,7 @@ function starshipDetails(apiURL){
         container.innerHTML += "<p>Model: " + starship.model + "</p>";
         container.innerHTML += "<p>Passengers: " + starship.passengers + "</p>";
         if(starship.pilots.length > 0){
-            container.innerHTML += "<p><a href='#' onclick=\"getPeople('" + starship.pilots + "')\">View Pilots</a></p>";
+            container.innerHTML += "<p><a href='#' onclick=\"getPeople('" + starship.pilots.replace("http", "https") + "')\">View Pilots</a></p>";
         }
         container.innerHTML += "<p>Starship Class: " + starship.starship_class + "</p>";
 
