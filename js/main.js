@@ -31,6 +31,10 @@ const links = [
     {
       text: "Week9 notes",
       href: "week9/index.html"
+    },
+    {
+      text: "Final Project - Star Wars (The API)",
+      href: "project/index.html"
     }
   ]
 
