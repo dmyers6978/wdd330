@@ -37,6 +37,8 @@ function loadPeople(apiURL){
         if(text.next){
             container.innerHTML += "<button onclick=\"loadPeople('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
+        
+        container.innerHTML += "<br><br><button onclick=\"initialize('https://swapi.dev/api/')\">Home</button>";
     })
     .catch( error => console.log('There was an error:', error));
 }
@@ -67,6 +69,8 @@ function loadPlanets(apiURL){
         if(text.next){
             container.innerHTML += "<button onclick=\"loadPlanets('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
+        
+        container.innerHTML += "<br><br><button onclick=\"initialize('https://swapi.dev/api/')\">Home</button>";
     })
     .catch( error => console.log('There was an error:', error));
 }
@@ -97,6 +101,8 @@ function loadFilms(apiURL){
         if(text.next){
             container.innerHTML += "<button onclick=\"loadFilms('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
+        
+        container.innerHTML += "<br><br><button onclick=\"initialize('https://swapi.dev/api/')\">Home</button>";
     })
     .catch( error => console.log('There was an error:', error));
 }
@@ -127,6 +133,8 @@ function loadSpecies(apiURL){
         if(text.next){
             container.innerHTML += "<button onclick=\"loadSpecies('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
+        
+        container.innerHTML += "<br><br><button onclick=\"initialize('https://swapi.dev/api/')\">Home</button>";
     })
     .catch( error => console.log('There was an error:', error));
 }
@@ -157,6 +165,8 @@ function loadVehicles(apiURL){
         if(text.next){
             container.innerHTML += "<button onclick=\"loadVehicles('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
+        
+        container.innerHTML += "<br><br><button onclick=\"initialize('https://swapi.dev/api/')\">Home</button>";
     })
     .catch( error => console.log('There was an error:', error));
 }
@@ -187,6 +197,8 @@ function loadStarships(apiURL){
         if(text.next){
             container.innerHTML += "<button onclick=\"loadStarships('" + text.next.replace("http", "https") + "')\" id='next'>Next</button>";
         }
+        
+        container.innerHTML += "<br><br><button onclick=\"initialize('https://swapi.dev/api/')\">Home</button>";
     })
     .catch( error => console.log('There was an error:', error));
 }
@@ -196,7 +208,6 @@ function loadFavorites(){
     Object.keys(storage).forEach(k => {
         var str = k.substring(0,1).toUpperCase() + k.substring(1,k.length);
         container.innerHTML += "<h1>" + str + "</h1>";
-        // console.log();
         Array.from(JSON.parse(storage[k])).forEach(link => {
             switch(k){
                 case 'people':
@@ -327,7 +338,6 @@ function planetDetails(apiURL){
         })
     .then( response => response.json() )
     .then( planet => {
-        console.log(planet);
         container.innerHTML = "";
         container.innerHTML += "<h1>" + planet.name + "</h1>";
         container.innerHTML += "<p>Climate: " + planet.climate + "</p>";
@@ -344,6 +354,7 @@ function planetDetails(apiURL){
         container.innerHTML += "<p>Rotation Period: " + planet.rotation_period + "</p>";
         container.innerHTML += "<p>Surface Water: " + planet.surface_water + "</p>";
         container.innerHTML += "<p>Terrain: " + planet.terrain + "</p>";
+        container.innerHTML += "<button onclick=\"loadPlanets('https://swapi.dev/api/planets/')\">Back</button>";
         if(typeof storage.getItem("planets") != "undefined" && storage.getItem("planets").indexOf(planet.name) != -1){
             container.innerHTML += "<p>One of your favorites</p>";
         } else{
@@ -387,6 +398,7 @@ function filmDetails(apiURL){
         if(film.vehicles.length > 0){
             container.innerHTML += "<p><a href='#' onclick=\"getVehicles('" + film.vehicles + "')\">View Vehicles</a></p>";
         }
+        container.innerHTML += "<button onclick=\"loadFilms('https://swapi.dev/api/films/')\">Back</button>";
         if(typeof storage.getItem("films") != "undefined" && storage.getItem("films").indexOf(film.title) != -1){
             container.innerHTML += "<p>One of your favorites</p>";
         } else{
@@ -426,6 +438,7 @@ function speciesDetails(apiURL){
             container.innerHTML += "<p><a href='#' onclick=\"getPeople('" + species.people + "')\">View People</a></p>";
         }
         container.innerHTML += "<p>Skin Colors: " + species.skin_colors + "</p>";
+        container.innerHTML += "<button onclick=\"loadSpecies('https://swapi.dev/api/species/')\">Back</button>";
         if(typeof storage.getItem("species") != "undefined" && storage.getItem("species").indexOf(species.name) != -1){
             container.innerHTML += "<p>One of your favorites</p>";
         } else{
@@ -467,6 +480,7 @@ function vehicleDetails(apiURL){
             container.innerHTML += "<p><a href='#' onclick=\"getPeople('" + vehicle.pilots + "')\">View People</a></p>";
         }
         container.innerHTML += "<p>Vehicle Class: " + vehicle.vehicle_class + "</p>";
+        container.innerHTML += "<button onclick=\"loadVehicles('https://swapi.dev/api/vehicles/')\">Back</button>";
         if(typeof storage.getItem("vehicles") != "undefined" && storage.getItem("vehicles").indexOf(vehicle.name) != -1){
             container.innerHTML += "<p>One of your favorites</p>";
         } else{
@@ -510,6 +524,7 @@ function starshipDetails(apiURL){
             container.innerHTML += "<p><a href='#' onclick=\"getPeople('" + starship.pilots + "')\">View Pilots</a></p>";
         }
         container.innerHTML += "<p>Starship Class: " + starship.starship_class + "</p>";
+        container.innerHTML += "<button onclick=\"loadStarships('https://swapi.dev/api/starships/')\">Back</button>";
         if(typeof storage.getItem("starships") != "undefined" && storage.getItem("starships").indexOf(starship.name) != -1){
             container.innerHTML += "<p>One of your favorites</p>";
         } else{
@@ -527,7 +542,6 @@ function getPeople(urls){
         if(apiURL.indexOf('https') == -1){
             apiURL = apiURL.replace("http", "https");
         }
-        console.log(apiURL);
     fetch(apiURL).then( response => {
         if(response.ok) {
             return response;
@@ -549,7 +563,6 @@ function getFilms(urls){
         if(apiURL.indexOf('https') == -1){
             apiURL = apiURL.replace("http", "https");
         }
-        console.log(apiURL);
     fetch(apiURL).then( response => {
         if(response.ok) {
             return response;
@@ -571,7 +584,6 @@ function getSpecies(urls){
         if(apiURL.indexOf('https') == -1){
             apiURL = apiURL.replace("http", "https");
         }
-        console.log(apiURL);
     fetch(apiURL).then( response => {
         if(response.ok) {
             return response;
@@ -593,7 +605,6 @@ function getStarships(urls){
         if(apiURL.indexOf('https') == -1){
             apiURL = apiURL.replace("http", "https");
         }
-        console.log(apiURL);
     fetch(apiURL).then( response => {
         if(response.ok) {
             return response;
@@ -615,7 +626,6 @@ function getVehicles(urls){
         if(apiURL.indexOf('https') == -1){
             apiURL = apiURL.replace("http", "https");
         }
-        console.log(apiURL);
     fetch(apiURL).then( response => {
         if(response.ok) {
             return response;
@@ -649,6 +659,5 @@ function saveFavorite(type, name, url){
             storage.setItem(type, JSON.stringify(arr));
         }
     }
-    console.log(storage);
 }
 
